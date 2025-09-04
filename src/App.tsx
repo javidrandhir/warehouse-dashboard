@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
-import { Users, Package, Clock, TrendingUp, AlertTriangle, Target, Activity, MapPin } from 'lucide-react';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { Users, Package, Clock, TrendingUp, Activity, MapPin } from 'lucide-react';
 import './App.css'
 
 function App() {
   const [selectedTimeframe, setSelectedTimeframe] = useState('today');
   const [selectedView, setSelectedView] = useState('dashboard');
-  const [selectedZoneDetail, setSelectedZoneDetail] = useState(null);
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -344,7 +341,7 @@ function App() {
             <div className="bg-white rounded-lg shadow-sm p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Order Flow Status</h3>
               <div className="space-y-4">
-                {orderFlow.map((stage, index) => (
+                {orderFlow.map((stage) => (
                   <div key={stage.stage} className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex justify-between items-center mb-1">
